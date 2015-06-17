@@ -3,12 +3,17 @@ require 'open-uri'
 class DrugsController < ApplicationController
 
 	def index
-		@drugs=Drug.search(params[:term])
+		if params[:term].nil?
+			render :search
+			return
 		end
 
+		@drugs=Drug.search(params[:term])
+	end
+
 	def show
-		@drugs=Drug.fetch(params[:list])
-		open=("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/" +[:list] +"PNG")
+		@drug = Drug.new('', params[:drug_id])
+		@drug.fetch
 	end
 
 end
