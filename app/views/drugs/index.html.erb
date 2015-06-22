@@ -1,0 +1,8 @@
+<ul>
+  <% for drug in @drugs do %>
+  <li>
+    <%= drug.target_name %>
+    <%= drug.drug_list.join(',') %>
+  </li>
+  <% end %>
+</ul>

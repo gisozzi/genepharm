@@ -1,6 +1,6 @@
 <h1>Search page</h1>
 
-<div><%= form_tag @drugs do |f| %>
+<div><%= form_tag(@drugs, method: "get") do |f| %>
       <%= text_field_tag :term, params[:term] %>
       <%= submit_tag "Search", :term => nil %>
 	<% end %>
@@ -8,5 +8,5 @@
 <br/>
 <br/>
 <div>
-	
+
 </div>
