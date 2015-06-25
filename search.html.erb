@@ -1,0 +1,7 @@
+<h1>Search page</h1>
+
+<div><%= form_tag(@drugs, method: "get") do |f| %>
+      <%= text_field_tag :target_name, params[:target_name] %>
+      <%= submit_tag "Search", :target_name => nil %>
+	<% end %>
+</div>
