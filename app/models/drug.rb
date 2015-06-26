@@ -6,8 +6,8 @@ class Drug < ActiveRecord::Base
 	attr_reader :target_name
 	attr_reader :drug_id
 
-	def initialize target, id
-		@target_name = target
+	def initialize (target, id)
+		@target_names = target
 		@drug_id = id
 	end
 
@@ -26,7 +26,7 @@ class Drug < ActiveRecord::Base
 	end
 
 	def fetch
-		pubchem_result = open_url("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/#{drug_id}/.../JSON")
+		pubchem_result = open_url("https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/cid/#{drug_id}/JSON")
 
 		info_json = JSON.parse(pubchem_result)
 	end

@@ -2,7 +2,7 @@
   <% for drug in @drugs do %>
   <li>
     <%= drug.target_name %>
-    <%= drug.drug_list.join(',') %>
+    <%= drug.drug_id.join(',') %>
   </li>
   <% end %>
 </ul>

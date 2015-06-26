@@ -1,2 +1,0 @@
-class DrugsController < ApplicationController
-end
