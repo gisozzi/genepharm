@@ -1,8 +1,8 @@
+<h1> Results</h1>
 <ul>
-  <% for drug in @drugs do %>
+  <% for pchem_result in @drugs do %>
   <li>
-    <%= drug.target_name %>
-    <%= drug.drug_id.join(',') %>
-  </li>
+    <%= pchem_result %>
+   </li>
   <% end %>
 </ul>

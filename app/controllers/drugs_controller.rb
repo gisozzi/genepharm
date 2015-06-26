@@ -1,20 +1,17 @@
-require 'open-uri'
-
 class DrugsController < ApplicationController
-
+	
 	def index
-		if params[:target_names].nil?
+		if params[:target_name].nil?
 			render :search
 			return
 		end
 
-		@drugs=Drug.search(params[:target_names])
+		@drugs=Drug.search(params[:target_name])
 		
 	end
 
 	def show
-		@drug = Drug.new('', params[:drug_id])
-			render json: drug_id
+		@drug = Drug.new(params[:pchem_result])
+			render html: (Drug.pchem_result)
 	end
-
 end
