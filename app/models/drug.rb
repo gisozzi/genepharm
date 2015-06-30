@@ -1,4 +1,5 @@
 require 'open-uri'
+require 'json'
 
 class Drug < ActiveRecord::Base
 
@@ -8,6 +9,7 @@ class Drug < ActiveRecord::Base
 	def Drug.search(target_name)
 		Drug.new
 
-		pchem_result = open("https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/target/proteinname/#{target_name}/XML")
+		pchem_result = open("https://pubchem.ncbi.nlm.nih.gov/rest/pug/assay/target/proteinname/#{target_name}/JSON")
+		JSON.parse(pchem_result.read)
 	end
 end
