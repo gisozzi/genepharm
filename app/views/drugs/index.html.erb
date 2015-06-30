@@ -1,8 +1,8 @@
+<h1> Results</h1>
 <ul>
-  <% for drug in @drugs do %>
-  <li>
-    <%= drug.target_name %>
-    <%= drug.drug_list.join(',') %>
-  </li>
+  <% for result in @drugs["PC_AssayContainer"] do %>
+    <li>
+    <%= result["assay"]["descr"]["description"] %>
+   </li>
   <% end %>
 </ul>
