@@ -1,15 +1,7 @@
 class DrugsController < ApplicationController
-
   def index
-    if params[:target_name].nil?
-      render :search
-      return
-    end
-
-    @drugs=Drug.search(params[:target_name])
+    assay_id = params["assay_id"]
+    ...
   end
 
-  def show
-    @res = Drug.show(params[:property])
-  end
 end

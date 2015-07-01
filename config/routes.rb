@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :drugs, only: [ :index, :show ]
+  resources :assays, only: [:index]
 
 
   # The priority is based upon order of creation: first created -> highest priority.
