@@ -3,6 +3,10 @@
   <% for result in @drugs["PC_AssayContainer"] do %>
     <li>
     <%= result["assay"]["descr"]["description"] %>
+	</li>
+   <li>
+    <%= result["assay"]["descr"]["aid"]["id"] %>
    </li>
-  <% end %>
+   <br/>
+   <% end %>
 </ul>

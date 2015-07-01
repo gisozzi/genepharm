@@ -1,7 +1,7 @@
-<h1>Here your results</h1>
+<h1>More info</h1>
 
 <ul>
-  <% pchem_reults.each do |result| %>
-  <li><%= result %></li>
-  <% end %>
+	<% for property in @res do %>
+	<li><%= property %></li>
+	<% end %>
 </ul>

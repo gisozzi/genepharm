@@ -6,12 +6,10 @@ class DrugsController < ApplicationController
       return
     end
 
-		# @drugs = [1,2,3]
     @drugs=Drug.search(params[:target_name])
   end
 
   def show
-    @drug = Drug.new(params[:pchem_result])
-    @pchem_results = Drug.pchem_result
+    @res = Drug.show(params[:property])
   end
 end
